@@ -1,0 +1,144 @@
+aws:
+  bucket_name: hwl6390-clouds
+  prefix: artifacts
+  upload: true
+create_dataset:
+  data:
+    columns:
+    - visible_mean
+    - visible_max
+    - visible_min
+    - visible_mean_distribution
+    - visible_contrast
+    - visible_entropy
+    - visible_second_angular_momentum
+    - IR_mean
+    - IR_max
+    - IR_min
+    file_name: clouds.data
+    import:
+      line_split: ' '
+  data_prep:
+    first_cloud:
+      left: 53
+      remove: /n
+      replace: ''
+      right: 1077
+    second_cloud:
+      left: 1082
+      remove: /n
+      replace: ''
+      right: 2105
+  date_config:
+    date_format: '%Y-%m-%d'
+eda:
+  fig_config:
+    figsize_x: 12
+    figsize_y: 8
+evaluate_performance:
+  conf_mat_setup:
+    columns:
+    - Predicted negative
+    - Predicted positive
+    index:
+    - Actual negative
+    - Actual positive
+  metric_dir: performance
+  metrics:
+  - roc_auc_score
+  - confusion_matrix
+  - accuracy_score
+  - classification_report
+  metrics_lib: sklearn.metrics
+  target: class
+generate_features:
+  feature_col:
+  - visible_mean
+  - visible_max
+  - visible_min
+  - visible_mean_distribution
+  - visible_contrast
+  - visible_entropy
+  - visible_second_angular_momentum
+  - IR_mean
+  - IR_max
+  - IR_min
+  feature_eng:
+  - function: log
+    operation: apply
+    source1: visible_entropy
+    target: log_entropy
+  - operation: multiply
+    source1: visible_contrast
+    source2: visible_entropy
+    target: entropy_x_contrast
+  - operation: subtract
+    source1: IR_max
+    source2: IR_min
+    target: IR_range
+  - operation: divide
+    source1:
+      operation: subtract
+      source1: IR_max
+      source2: IR_min
+    source2: IR_mean
+    target: IR_norm_range
+  target_col: class
+mpl_config:
+  axes.labelcolor: '#677385'
+  axes.labelsize: 20
+  axes.prop_cycle: color
+  axes.prop_cycle_colors:
+  - '#0085ca'
+  - '#888b8d'
+  - '#00c389'
+  - '#f4364c'
+  - '#e56db1'
+  axes.titlesize: 20
+  figure.figsize:
+  - 12.0
+  - 8.0
+  font.family: sans-serif
+  font.sans-serif: Tahoma
+  font.size: 16
+  lines.color: '#0055A7'
+  lines.linewidth: 3
+  text.color: '#677385'
+  xtick.labelsize: 14
+  ytick.labelsize: 14
+run_config:
+  author: Henry Liang
+  data_dir:
+    processed: data/processed
+    raw: data/raw
+  data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/taylor/cloud.data
+  dependencies: requirements.txt
+  description: Classifies clouds into one of two types.
+  figure_dir: figures
+  name: cloud-classification-1
+  output:
+    runs: artifacts
+  version: default
+score_model:
+  initial_features:
+  - log_entropy
+  - IR_norm_range
+  - entropy_x_contrast
+  score_dir: model_output
+  target: class
+train_model:
+  data_dir: data_for_model
+  initial_features:
+  - log_entropy
+  - IR_norm_range
+  - entropy_x_contrast
+  model_config:
+    hyperparam:
+      max_depth: 10
+      n_estimators: 10
+    model_lib: sklearn.ensemble
+    type: RandomForestClassifier
+  model_dir: model_artifacts
+  target: class
+  train_test_split:
+    test_size: 0.4

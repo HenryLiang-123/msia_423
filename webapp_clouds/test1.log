@@ -1,0 +1,62 @@
+06/02/2023 12:53:52 AM utils - INFO     Configuration file loaded from config/config.yaml
+06/02/2023 12:53:54 AM aws_utils - INFO     Model files successfully downloaded to local
+06/02/2023 12:53:54 AM aws_utils - INFO     Model files successfully downloaded to local
+06/02/2023 12:53:54 AM aws_utils - INFO     Model files successfully downloaded to local
+06/02/2023 12:53:54 AM utils - INFO     Successfully loaded data into memory
+06/02/2023 12:53:55 AM utils - INFO     Model successfully loaded as object
+06/02/2023 12:53:55 AM main - INFO     Model model1 selected
+06/02/2023 12:53:58 AM utils - INFO     Model successfully loaded as object
+06/02/2023 12:53:58 AM main - INFO     Model model2 selected
+06/02/2023 12:53:59 AM main - INFO     Model model2 selected
+06/02/2023 12:53:59 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:05 AM main - INFO     Model model2 selected
+06/02/2023 12:54:07 AM main - INFO     Model model2 selected
+06/02/2023 12:54:08 AM main - INFO     Model model2 selected
+06/02/2023 12:54:08 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:10 AM main - INFO     Model model2 selected
+06/02/2023 12:54:10 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:10 AM main - INFO     Model model2 selected
+06/02/2023 12:54:10 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:11 AM main - INFO     Model model2 selected
+06/02/2023 12:54:11 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:11 AM main - INFO     Model model2 selected
+06/02/2023 12:54:11 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:18 AM main - INFO     Model model2 selected
+06/02/2023 12:54:18 AM main - INFO     Model model2 selected
+06/02/2023 12:54:18 AM main - INFO     New prediction request submitted
+06/02/2023 12:54:20 AM main - INFO     Model model2 selected
+06/02/2023 12:54:21 AM main - INFO     Model model2 selected
+06/02/2023 12:54:21 AM main - INFO     New prediction request submitted
+06/02/2023 09:22:18 PM utils - INFO     Configuration file loaded from config/config.yaml
+06/02/2023 09:22:18 PM aws_utils - ERROR    Failed to download model files due to Error when retrieving token from sso: Token has expired and refresh failed
+06/02/2023 09:24:12 PM utils - INFO     Configuration file loaded from config/config.yaml
+06/02/2023 09:24:12 PM aws_utils - INFO     Model files successfully downloaded to local
+06/02/2023 09:24:13 PM aws_utils - INFO     Model files successfully downloaded to local
+06/02/2023 09:24:13 PM aws_utils - INFO     Model files successfully downloaded to local
+06/02/2023 09:24:13 PM utils - INFO     Successfully loaded data into memory
+06/02/2023 09:24:13 PM utils - INFO     Model successfully loaded as object
+06/02/2023 09:24:13 PM main - INFO     Model model1 selected
+06/02/2023 09:24:16 PM main - INFO     Model model1 selected
+06/02/2023 09:24:16 PM main - INFO     Model model1 selected
+06/02/2023 09:24:16 PM main - INFO     New prediction request submitted
+06/02/2023 09:24:17 PM main - INFO     Model model1 selected
+06/02/2023 09:24:18 PM main - INFO     Model model1 selected
+06/02/2023 09:24:19 PM main - INFO     Model model1 selected
+06/02/2023 09:24:19 PM main - INFO     Model model1 selected
+06/02/2023 09:24:19 PM main - INFO     New prediction request submitted
+06/02/2023 09:24:21 PM main - INFO     Model model1 selected
+06/02/2023 09:24:22 PM main - INFO     Model model1 selected
+06/02/2023 09:24:22 PM main - INFO     New prediction request submitted
+06/02/2023 09:24:23 PM main - INFO     Model model1 selected
+06/02/2023 09:24:23 PM main - INFO     Model model1 selected
+06/02/2023 09:24:23 PM main - INFO     New prediction request submitted
+06/02/2023 09:24:24 PM main - INFO     Model model1 selected
+06/02/2023 09:24:25 PM main - INFO     Model model1 selected
+06/02/2023 09:24:25 PM main - INFO     New prediction request submitted
+06/02/2023 09:24:27 PM utils - INFO     Model successfully loaded as object
+06/02/2023 09:24:27 PM main - INFO     Model model2 selected
+06/02/2023 09:24:28 PM main - INFO     Model model2 selected
+06/02/2023 09:24:28 PM main - INFO     New prediction request submitted
+06/02/2023 09:24:29 PM main - INFO     Model model2 selected
+06/02/2023 09:24:30 PM main - INFO     Model model2 selected
+06/02/2023 09:24:30 PM main - INFO     New prediction request submitted

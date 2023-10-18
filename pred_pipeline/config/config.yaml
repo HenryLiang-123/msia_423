@@ -1,0 +1,154 @@
+run_config:
+  name: cloud-classification-1
+  author: Henry Liang
+  version: default
+  description: Classifies clouds into one of two types.
+  dependencies: requirements.txt
+  data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/taylor/cloud.data
+  output:
+    runs: artifacts
+  data_dir:
+    raw: data/raw
+    processed: data/processed
+  figure_dir: figures
+
+mpl_config:
+  font.size: 16
+  axes.prop_cycle: 'color'
+  axes.prop_cycle_colors: 
+    - '#0085ca'
+    - '#888b8d'
+    - '#00c389'
+    - '#f4364c'
+    - '#e56db1'
+  xtick.labelsize: 14
+  ytick.labelsize: 14
+  figure.figsize: [12.0, 8.0]
+  axes.labelsize: 20
+  axes.labelcolor: '#677385'
+  axes.titlesize: 20
+  lines.color: '#0055A7'
+  lines.linewidth: 3
+  text.color: '#677385'
+  font.family: sans-serif
+  font.sans-serif: Tahoma
+
+create_dataset:
+  date_config:
+    date_format: "%Y-%m-%d"
+  data:
+    file_name: clouds.data
+    import:
+      line_split: " "
+    columns:
+      - visible_mean
+      - visible_max
+      - visible_min
+      - visible_mean_distribution
+      - visible_contrast
+      - visible_entropy
+      - visible_second_angular_momentum
+      - IR_mean
+      - IR_max
+      - IR_min
+  data_prep:
+    first_cloud:
+      left: 53
+      right: 1077
+      remove: '/n'
+      replace: ""
+    second_cloud:
+      left: 1082
+      right: 2105
+      remove: '/n'
+      replace: ""
+
+generate_features:
+  feature_col: 
+    - visible_mean
+    - visible_max
+    - visible_min
+    - visible_mean_distribution
+    - visible_contrast
+    - visible_entropy
+    - visible_second_angular_momentum
+    - IR_mean
+    - IR_max
+    - IR_min
+  target_col: class
+  feature_eng:
+    - operation: apply
+      source1: visible_entropy
+      target: log_entropy
+      function: log
+
+    - operation: multiply
+      source1: visible_contrast
+      source2: visible_entropy
+      target: entropy_x_contrast
+
+    - operation: subtract
+      source1: IR_max
+      source2: IR_min
+      target: IR_range
+
+    - operation: divide
+      source1:
+        operation: subtract
+        source1: IR_max
+        source2: IR_min
+      source2: IR_mean
+      target: IR_norm_range
+
+eda:
+  fig_config:
+    figsize_x: 12
+    figsize_y: 8  
+
+train_model:
+  data_dir: data_for_model
+  model_dir: model_artifacts
+  train_test_split:
+    test_size: 0.4
+  initial_features: 
+    - log_entropy
+    - IR_norm_range
+    - entropy_x_contrast
+  target: class
+  model_config:
+    type: RandomForestClassifier
+    model_lib: sklearn.ensemble
+    hyperparam:
+      n_estimators: 10
+      max_depth: 10
+
+score_model:
+  target: class
+  initial_features: 
+      - log_entropy
+      - IR_norm_range
+      - entropy_x_contrast
+  score_dir: model_output
+
+evaluate_performance:
+  metric_dir: performance
+  target: class
+  metrics_lib: sklearn.metrics
+  metrics:
+    - roc_auc_score
+    - confusion_matrix
+    - accuracy_score
+    - classification_report
+  conf_mat_setup:
+    index:
+      - Actual negative
+      - Actual positive
+    columns:
+      - Predicted negative
+      - Predicted positive
+
+
+aws:
+  upload: True
+  bucket_name: hwl6390-clouds
+  prefix: artifacts

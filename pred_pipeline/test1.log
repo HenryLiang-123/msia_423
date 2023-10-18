@@ -1,0 +1,46 @@
+05/10/2023 10:09:30 PM pipeline - INFO     Configuration file loaded from config/config.yaml
+05/10/2023 10:09:30 PM acquire_data - INFO     Data written to artifacts/1683774570/data/raw/clouds.data
+05/10/2023 10:09:31 PM create_dataset - INFO     Clean dataset created
+05/10/2023 10:09:31 PM create_dataset - INFO     Saved dataset to artifacts/1683774570/data/processed/clouds.csv
+05/10/2023 10:09:31 PM generate_features - INFO     Feature log_entropy created.
+05/10/2023 10:09:31 PM generate_features - INFO     Feature entropy_x_contrast created.
+05/10/2023 10:09:31 PM generate_features - INFO     Feature IR_range created.
+05/10/2023 10:09:31 PM generate_features - INFO     Feature IR_norm_range created.
+05/10/2023 10:09:31 PM analysis - INFO     visible_mean_eda_plot.png saved to artifacts/1683774570/figures/visible_mean_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     visible_max_eda_plot.png saved to artifacts/1683774570/figures/visible_max_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     visible_min_eda_plot.png saved to artifacts/1683774570/figures/visible_min_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     visible_mean_distribution_eda_plot.png saved to artifacts/1683774570/figures/visible_mean_distribution_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     visible_contrast_eda_plot.png saved to artifacts/1683774570/figures/visible_contrast_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     visible_entropy_eda_plot.png saved to artifacts/1683774570/figures/visible_entropy_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     visible_second_angular_momentum_eda_plot.png saved to artifacts/1683774570/figures/visible_second_angular_momentum_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     IR_mean_eda_plot.png saved to artifacts/1683774570/figures/IR_mean_eda_plot.png
+05/10/2023 10:09:31 PM analysis - INFO     IR_max_eda_plot.png saved to artifacts/1683774570/figures/IR_max_eda_plot.png
+05/10/2023 10:09:32 PM analysis - INFO     IR_min_eda_plot.png saved to artifacts/1683774570/figures/IR_min_eda_plot.png
+05/10/2023 10:09:32 PM train_model - INFO     Model successfully trained
+05/10/2023 10:09:32 PM train_model - INFO     Train and test sets created
+05/10/2023 10:09:32 PM train_model - INFO     Train data set successfully saved to artifacts/1683774570/data_for_model
+05/10/2023 10:09:32 PM train_model - INFO     Test data set successfully saved to artifacts/1683774570/data_for_model
+05/10/2023 10:09:32 PM train_model - INFO     Model binary successfully saved to artifacts/1683774570/model_artifacts/trained_model_object.pkl
+05/10/2023 10:09:32 PM score_model - INFO     Model predictions (probability and class) created
+05/10/2023 10:09:32 PM score_model - INFO     Model predictions saved to artifacts/1683774570/model_output/scores.csv
+05/10/2023 10:09:32 PM evaluate_performance - INFO     Dic with metrics created
+05/10/2023 10:09:32 PM evaluate_performance - INFO     Metrics yaml file created at artifacts/1683774570/performance/metrics.yaml
+05/10/2023 10:09:32 PM aws_utils - INFO     Bucket hwl6390-clouds exists. Writing directly to the specified bucket
+05/10/2023 10:09:32 PM aws_utils - INFO     Uploaded artifacts/1683774570/config.yaml to S3 location:  hwl6390-clouds/artifacts/1683774570/config.yaml
+05/10/2023 10:09:32 PM aws_utils - INFO     Uploaded artifacts/1683774570/performance/metrics.yaml to S3 location:  hwl6390-clouds/artifacts/1683774570/performance/metrics.yaml
+05/10/2023 10:09:32 PM aws_utils - INFO     Uploaded artifacts/1683774570/model_artifacts/trained_model_object.pkl to S3 location:  hwl6390-clouds/artifacts/1683774570/model_artifacts/trained_model_object.pkl
+05/10/2023 10:09:32 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_mean_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_mean_eda_plot.png
+05/10/2023 10:09:32 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/IR_min_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/IR_min_eda_plot.png
+05/10/2023 10:09:32 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_contrast_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_contrast_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_max_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_max_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_mean_distribution_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_mean_distribution_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/IR_mean_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/IR_mean_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/IR_max_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/IR_max_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_min_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_min_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_entropy_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_entropy_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/figures/visible_second_angular_momentum_eda_plot.png to S3 location:  hwl6390-clouds/artifacts/1683774570/figures/visible_second_angular_momentum_eda_plot.png
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/model_output/scores.csv to S3 location:  hwl6390-clouds/artifacts/1683774570/model_output/scores.csv
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/data_for_model/train.csv to S3 location:  hwl6390-clouds/artifacts/1683774570/data_for_model/train.csv
+05/10/2023 10:09:33 PM aws_utils - INFO     Uploaded artifacts/1683774570/data_for_model/test.csv to S3 location:  hwl6390-clouds/artifacts/1683774570/data_for_model/test.csv
+05/10/2023 10:09:34 PM aws_utils - INFO     Uploaded artifacts/1683774570/data/processed/clouds.csv to S3 location:  hwl6390-clouds/artifacts/1683774570/data/processed/clouds.csv
+05/10/2023 10:09:34 PM aws_utils - INFO     Uploaded artifacts/1683774570/data/raw/clouds.data to S3 location:  hwl6390-clouds/artifacts/1683774570/data/raw/clouds.data

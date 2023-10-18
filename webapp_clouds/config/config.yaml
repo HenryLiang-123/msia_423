@@ -1,0 +1,27 @@
+run_config:
+  name: streamlit-1
+  author: Henry Liang
+  version: default
+  description: Streamlit app to generate real-time predictions.
+  dependencies: requirements.txt
+  data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/taylor/cloud.data
+  data_dir: data_for_model
+  model_dir: models
+
+model_config:
+  data: train.csv
+  model1: 
+    - name: model_v1.pkl
+    - features:
+      - log_entropy
+      - IR_norm_range
+      - entropy_x_contrast
+  model2: 
+    - name: model_v2.pkl
+    - features:
+      - log_entropy
+      - IR_norm_range
+      - entropy_x_contrast
+    
+aws:
+  model_bucket: hwl6390-model
